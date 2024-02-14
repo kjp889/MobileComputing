@@ -11,7 +11,30 @@ namespace mc_class
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            refreshPrisonNames();
+        }
 
+        protected void CheckBox_male_CheckedChanged(object sender, EventArgs e)
+        {
+            refreshPrisonNames();
+        }
+
+        void refreshPrisonNames()
+        {
+            DropDownList_prisons.Items.Clear();
+            if (CheckBox_male.Checked)
+            {
+                DropDownList_prisons.Items.Add("Barnett Street");
+                DropDownList_prisons.Items.Add("Cow's Pen");
+                DropDownList_prisons.Items.Add("Hamilton Pot");
+                DropDownList_prisons.Items.Add("Sandy Bay");
+            }
+            else
+            {
+                DropDownList_prisons.Items.Add("Crow's Path");
+                DropDownList_prisons.Items.Add("McCook's Pen");
+                DropDownList_prisons.Items.Add("Christiana");
+            }
         }
     }
 }
