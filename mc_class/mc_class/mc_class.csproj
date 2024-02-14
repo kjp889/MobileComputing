@@ -67,20 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="prison.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="prison.apsx.cs">
+    <Compile Include="prison.aspx.cs">
+      <DependentUpon>prison.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="prison.apsx.designer.cs">
-      <DependentUpon>prison.apsx.cs</DependentUpon>
+    <Compile Include="prison.aspx.designer.cs">
+      <DependentUpon>prison.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="prison.apsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
