@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="halls.aspx" />
+    <Content Include="modules.aspx" />
     <Content Include="prison.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -78,6 +79,14 @@
     </Compile>
     <Compile Include="halls.aspx.designer.cs">
       <DependentUpon>halls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\DataAccessModules.cs" />
+    <Compile Include="modules.aspx.cs">
+      <DependentUpon>modules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modules.aspx.designer.cs">
+      <DependentUpon>modules.aspx</DependentUpon>
     </Compile>
     <Compile Include="prison.aspx.cs">
       <DependentUpon>prison.aspx</DependentUpon>
@@ -97,9 +106,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Layers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
