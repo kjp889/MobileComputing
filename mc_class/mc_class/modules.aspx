@@ -5,12 +5,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/StyleSheet_module.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
+    <form id="formModules" runat="server">
+        <div id="divMain" class="div" runat="server">
+            <asp:Button CssClass="button" ID="Button_Main_Student_Maintenance" runat="server" Text="Student Maintenance" />
+            <asp:Button CssClass="button" ID="Button_Main_Module_Maintenance" runat="server" Text="Module Maintenance" />
+            <asp:Button CssClass="button" ID="Button_Main_Module_Info" runat="server" Text="Module Info" />
+        </div>
+
+        <div id="divModuleInfo" runat="server">
             <asp:Label ID="Label1" runat="server" Text="Module Info"></asp:Label>
             <br /><br />
             <asp:Label ID="Label2" runat="server" Text="Student"></asp:Label>
@@ -37,6 +43,7 @@
             <br />
             <asp:DropDownList ID="DropDownList_Students_Doing_Module" DataTextField="student_name" DataValueField="student num" runat="server"></asp:DropDownList>
             <br /><br />
+            <asp:Button CssClass="button" ID="Button_go_back1" runat="server" Text="Go Back" />
         </div>
     </form>
 </body>

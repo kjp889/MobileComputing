@@ -25,6 +25,14 @@ namespace mc_class
             DropDownList_Student.DataSource = dbAccess.getAllStudents();
             DropDownList_Student.DataBind();
             refreshModules();
+            divsOff();
+
+            divMain.Visible = true;
+        }
+
+        void divsOff()
+        {
+            divMain.Visible = divModuleInfo.Visible = false;
         }
 
         void refreshModules()

@@ -70,6 +70,7 @@
     <Content Include="halls.aspx" />
     <Content Include="modules.aspx" />
     <Content Include="prison.aspx" />
+    <Content Include="Styles\StyleSheet_module.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
