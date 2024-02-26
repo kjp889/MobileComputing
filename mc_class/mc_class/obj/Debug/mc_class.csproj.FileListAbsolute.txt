@@ -54,6 +54,6 @@ C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\bin\Microsoft.Cod
 C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\obj\Debug\mc_class.csproj.AssemblyReference.cache
 C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\obj\Debug\mc_class.csproj.CoreCompileInputs.cache
-C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\obj\Debug\mc_class.csproj.CopyComplete
 C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\obj\Debug\mc_class.dll
 C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\obj\Debug\mc_class.pdb
+C:\Users\Kyle\Documents\Programming\mc_class\mc_class\mc_class\obj\Debug\mc_class.csproj.Up2Date
