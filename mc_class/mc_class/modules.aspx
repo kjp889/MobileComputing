@@ -13,7 +13,7 @@
         <div id="divMain" class="div" runat="server">
             <asp:Button CssClass="button" ID="Button_Main_Student_Maintenance" runat="server" Text="Student Maintenance" />
             <asp:Button CssClass="button" ID="Button_Main_Module_Maintenance" runat="server" Text="Module Maintenance" />
-            <asp:Button CssClass="button" ID="Button_Main_Module_Info" runat="server" Text="Module Info" />
+            <asp:Button CssClass="button" ID="Button_Main_Module_Info" runat="server" Text="Module Info" OnClick="Button_Main_Module_Info_Click" />
         </div>
 
         <div id="divModuleInfo" runat="server">
@@ -43,7 +43,25 @@
             <br />
             <asp:DropDownList ID="DropDownList_Students_Doing_Module" DataTextField="student_name" DataValueField="student num" runat="server"></asp:DropDownList>
             <br /><br />
-            <asp:Button CssClass="button" ID="Button_go_back1" runat="server" Text="Go Back" />
+            <asp:Button CssClass="button" ID="Button_go_back1" runat="server" Text="Go Back" OnClick="Button_go_back1_Click" />
+        </div>
+
+        <div id="divStudentMain" runat="server">
+            <asp:Label CssClass="label" runat="server" Text="Student"></asp:Label><br />
+            <asp:DropDownList CssClass="droplist" ID="DropDownList_studentMain_students" runat="server"></asp:DropDownList><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_edit" runat="server" Text="Edit" /><br />
+            <br />
+            <asp:Label CssClass="label" runat="server" Text="First Name"></asp:Label><br />
+            <asp:TextBox CssClass="textbox" ID="TextBox_studentMain_firstName" MaxLength="17" runat="server"></asp:TextBox><br />
+            <br />
+             <asp:Label CssClass="label" runat="server" Text="Last Name"></asp:Label><br />
+             <asp:TextBox CssClass="textbox" ID="TextBox_studentMain_lastName" MaxLength="17" runat="server"></asp:TextBox><br />
+             <br />
+            <asp:Label CssClass="label" ID="Label_studentMain_feedback" runat="server" Text="Lable"></asp:Label><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_new" runat="server" Text="New" /><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_add" runat="server" Text="Add" /><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_update" runat="server" Text="Update" OnClick="" /><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_go_back" runat="server" Text="Go Back" OnClick="Button_go_back1_Click" />
         </div>
     </form>
 </body>

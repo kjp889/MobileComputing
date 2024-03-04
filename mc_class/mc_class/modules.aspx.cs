@@ -32,7 +32,9 @@ namespace mc_class
 
         void divsOff()
         {
-            divMain.Visible = divModuleInfo.Visible = false;
+            divMain.Visible =
+                divModuleInfo.Visible =
+                divStudentMain.Visible = false;
         }
 
         void refreshModules()
@@ -104,6 +106,24 @@ namespace mc_class
 
         }
 
+        protected void Button_go_back1_Click(object sender, EventArgs e)
+        {
+            divsOff();
+            divMain.Visible = true;
+        }
+
+        protected void Button_Main_Module_Info_Click(object sender, EventArgs e)
+        {
+            divsOff();
+            divModuleInfo.Visible = true;
+        }
+
+        string Empty() { return string.Empty; }
+
+        void clearMessages()
+        {
+            Label_studentMain_feedback.Text = Empty();
+        }
 
     }
 }
