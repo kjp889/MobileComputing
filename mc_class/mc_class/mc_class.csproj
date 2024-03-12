@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="halls.aspx" />
-    <Content Include="index.html" />
+    <Content Include="Index.html" />
     <Content Include="modules.aspx" />
     <Content Include="prison.aspx" />
     <Content Include="Styles\StyleSheet_module.css" />

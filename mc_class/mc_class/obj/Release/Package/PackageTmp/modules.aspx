@@ -11,7 +11,7 @@
 <body>
     <form id="formModules" runat="server">
         <div id="divMain" class="div" runat="server">
-            <asp:Button CssClass="button" ID="Button_Main_Student_Maintenance" runat="server" Text="Student Maintenance" />
+            <asp:Button CssClass="button" ID="Button_Main_Student_Maintenance" runat="server" Text="Student Maintenance" OnClick="Button_Main_Student_Maintenance_Click" />
             <asp:Button CssClass="button" ID="Button_Main_Module_Maintenance" runat="server" Text="Module Maintenance" />
             <asp:Button CssClass="button" ID="Button_Main_Module_Info" runat="server" Text="Module Info" OnClick="Button_Main_Module_Info_Click" />
         </div>
