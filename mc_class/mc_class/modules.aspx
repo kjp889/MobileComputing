@@ -47,22 +47,23 @@
         </div>
 
         <div id="divStudentMain" runat="server">
+            <br />
             <asp:Label CssClass="label" runat="server" Text="Student"></asp:Label><br />
-            <asp:DropDownList CssClass="droplist" ID="DropDownList_studentMain_students" runat="server"></asp:DropDownList><br />
-            <asp:Button CssClass="button" ID="Button_studentMain_edit" runat="server" Text="Edit" /><br />
-            <br />
+            <asp:DropDownList CssClass="droplist" ID="DropDownList_studentMain_students" AutoPostBack="true" DataTextField="student" DataValueField="student num" runat="server" OnSelectedIndexChanged="DropDownList_studentMain_students_SelectedIndexChanged"></asp:DropDownList><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_edit" runat="server" Text="Edit" OnClick="Button_studentMain_edit_Click" />
+            <br /><br />
             <asp:Label CssClass="label" runat="server" Text="First Name"></asp:Label><br />
-            <asp:TextBox CssClass="textbox" ID="TextBox_studentMain_firstName" MaxLength="17" runat="server"></asp:TextBox><br />
-            <br />
-             <asp:Label CssClass="label" runat="server" Text="Last Name"></asp:Label><br />
-             <asp:TextBox CssClass="textbox" ID="TextBox_studentMain_lastName" MaxLength="17" runat="server"></asp:TextBox><br />
-             <br />
-            <asp:Label CssClass="label" ID="Label_studentMain_feedback" runat="server" Text="Lable"></asp:Label><br />
-            <asp:Button CssClass="button" ID="Button_studentMain_new" runat="server" Text="New" /><br />
-            <asp:Button CssClass="button" ID="Button_studentMain_add" runat="server" Text="Add" /><br />
-            <asp:Button CssClass="button" ID="Button_studentMain_update" runat="server" Text="Update" OnClick="" /><br />
-            <asp:Button CssClass="button" ID="Button_studentMain_go_back" runat="server" Text="Go Back" OnClick="Button_go_back1_Click" />
-        </div>
+            <asp:TextBox CssClass="textbox" ID="TextBox_studentMain_firstName" MaxLength="17" runat="server"></asp:TextBox>
+            <br /><br />
+            <asp:Label CssClass="label" runat="server" Text="Last Name"></asp:Label><br />
+            <asp:TextBox CssClass="textbox" ID="TextBox_studentMain_lastName" MaxLength="17" runat="server"></asp:TextBox>
+            <br /><br />
+            <asp:Label CssClass="label" ID="Label_studentMain_feedback" runat="server" Text="Label"></asp:Label><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_new" runat="server" Text="New" OnClick="Button_studentMain_new_Click" /><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_add" runat="server" Text="Add" OnClick="Button_studentMain_add_Click" /><br />
+            <asp:Button CssClass="button" ID="Button_studentMain_update" runat="server" Text="Update" OnClick="Button_studentMain_update_Click" /><br />
+            <asp:Button CssClass="button" ID="Button_go_back2" runat="server" Text="Go Back" OnClick="Button_go_back1_Click" /><br />
+        </div>     
     </form>
 </body>
 </html>

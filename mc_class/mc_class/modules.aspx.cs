@@ -118,6 +118,14 @@ namespace mc_class
             divModuleInfo.Visible = true;
         }
 
+        protected void Button_Main_Student_Maintenance_Click(object sender, EventArgs e)
+        {
+            divsOff();
+            divStudentMain.Visible = true;
+            clearMessages();
+            refreshStudentMain_students();
+        }
+
         string Empty() { return string.Empty; }
 
         void clearMessages()
@@ -125,5 +133,116 @@ namespace mc_class
             Label_studentMain_feedback.Text = Empty();
         }
 
+        void formsStudentMaintenanceOff()
+        {
+            TextBox_studentMain_firstName.Enabled =
+                TextBox_studentMain_lastName.Enabled =
+                Button_studentMain_add.Enabled =
+                Button_studentMain_update.Enabled = false;
+
+            TextBox_studentMain_firstName.BackColor =
+               TextBox_studentMain_lastName.BackColor =
+               Button_studentMain_add.BackColor =
+               Button_studentMain_update.BackColor = System.Drawing.Color.LightGray;
+        }
+
+        void formsOff()
+        {
+            formsStudentMaintenanceOff();
+        }
+
+        void refreshStudentMain_students()
+        {
+            formsOff();
+            DropDownList_studentMain_students.DataSource = dbAccess.getAllStudents();
+            DropDownList_studentMain_students.DataBind();
+            showStudentMain();
+        }
+
+        void showStudentMain()
+        {
+            DataTable db = dbAccess.getStudentSingle(int.Parse(DropDownList_studentMain_students.SelectedValue));
+
+            TextBox_studentMain_firstName.Text = db.Rows[0]["first name"].ToString();
+            TextBox_studentMain_lastName.Text = db.Rows[0]["last name"].ToString();
+        }
+
+        protected void DropDownList_studentMain_students_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            showStudentMain();
+        }
+
+        protected void Button_studentMain_edit_Click(object sender, EventArgs e)
+        {
+            formsOff();
+            clearMessages();
+
+            TextBox_studentMain_firstName.Enabled =
+                TextBox_studentMain_lastName.Enabled =
+                Button_studentMain_update.Enabled = true;
+
+            TextBox_studentMain_firstName.BackColor =
+                TextBox_studentMain_lastName.BackColor = System.Drawing.Color.LightYellow;
+             
+            Button_studentMain_update.BackColor = System.Drawing.Color.PaleVioletRed;
+        }
+
+        protected void Button_studentMain_update_Click(object sender, EventArgs e)
+        {
+            clearMessages();
+
+            if(TextBox_studentMain_firstName.Text == Empty())
+            {
+                Label_studentMain_feedback.Text = "<font color='red'>A first name is still required...</font><br />";
+                return;
+            }
+            if (TextBox_studentMain_lastName.Text == Empty())
+            {
+                Label_studentMain_feedback.Text = "<font color='red'>A last name is still required...</font><br />";
+                return;
+            }
+
+            dbAccess.updateStudent(int.Parse(DropDownList_studentMain_students.SelectedValue), TextBox_studentMain_firstName.Text, TextBox_studentMain_lastName.Text);
+            refreshStudentMain_students();
+            Label_studentMain_feedback.Text = "<font color='blue'>DONE...</font><br />";
+        }
+
+        protected void Button_studentMain_add_Click(object sender, EventArgs e)
+        {
+            clearMessages();
+
+            if (TextBox_studentMain_firstName.Text == Empty())
+            {
+                Label_studentMain_feedback.Text = "<font color='red'>A first name is still required...</font><br />";
+                return;
+            }
+            if (TextBox_studentMain_lastName.Text == Empty())
+            {
+                Label_studentMain_feedback.Text = "<font color='red'>A last name is still required...</font><br />";
+                return;
+            }
+
+            dbAccess.addStudent(TextBox_studentMain_firstName.Text, TextBox_studentMain_lastName.Text);
+            refreshStudentMain_students();
+            Label_studentMain_feedback.Text = "<font color='blue'>DONE...</font><br />";
+        }
+
+        protected void Button_studentMain_new_Click(object sender, EventArgs e)
+        {
+            formsOff();
+            clearMessages();
+
+            TextBox_studentMain_firstName.Enabled =
+                TextBox_studentMain_lastName.Enabled =
+                Button_studentMain_add.Enabled = true;
+
+            TextBox_studentMain_firstName.BackColor =
+                TextBox_studentMain_lastName.BackColor = System.Drawing.Color.LightYellow;
+
+            Button_studentMain_add.BackColor = System.Drawing.Color.PaleVioletRed;
+
+            TextBox_studentMain_firstName.Text =
+                TextBox_studentMain_lastName.Text = Empty();
+        }
     }
 }
